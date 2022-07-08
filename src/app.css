@@ -1,0 +1,15 @@
+.weather-tab {
+    background-color: #0000001e;
+    padding: 15px;
+    max-width: 1000px;
+    display: flex;
+}
+
+.nav-link, .nav-link:hover, .nav-link:link {
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+.nav-item:hover{
+    background-color: #34315049;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
+// import './bootstrap.css';
+import './app.css'
 
 
 const places = [
@@ -63,26 +65,26 @@ class App extends Component {
     const activePlace = this.state.activePlace;
     return (
       <div className="App">
-        <Navbar bg="light" variant="light">
-          <Container>
+        <Navbar bg="dark" variant="dark">
+          <Container className="nav-bar">
             <Navbar.Brand>What weather is now?</Navbar.Brand>
           </Container>
         </Navbar>
-        <Container>
+        <Container className="weather-tab">
         <Row>
-            <Col md={4} sm={4}>
-              <h3>Select a city from list</h3>
-              <Nav variant="pills" className="flex-column" defaultActiveKey={activePlace} onSelect={index => 
+            <Col className="flex-col-list">
+              <h4>Select a city from list</h4>
+              <Nav className="flex-column" defaultActiveKey={activePlace} onSelect={index => 
                 { this.setState({ activePlace: index }); 
                 }}>
                 {places.map((place, index) => (
-                <Nav.Item key={index}>
-                  <Nav.Link key={index} eventKey={index}>{place.name}</Nav.Link>
+                <Nav.Item className="nav-item" key={index}>
+                  <Nav.Link className="nav-link" key={index} eventKey={index}>{place.name}</Nav.Link>
                 </Nav.Item>))}
               </Nav>
             </Col>
-            <Col>
-              <WeatherDisplay key={activePlace} zip={places[activePlace].zip} />
+            <Col className="flex-col-disp">
+              <WeatherDisplay className="weather-disp" key={activePlace} zip={places[activePlace].zip} />
             </Col>
           </Row>
         </Container>
